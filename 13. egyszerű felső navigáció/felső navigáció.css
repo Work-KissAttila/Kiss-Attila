@@ -1,0 +1,63 @@
+/* ==== GENERAL STYLES ==== */
+
+* {
+  box-sizing: border-box;
+}
+
+/* ==== A SIMPLE TOP NAVIGATION ==== */
+
+nav ul {
+  background-color: #eee;
+  text-align: center;
+}
+
+
+/*A line-height és a height tulajdonságoknak szándékosan adtunk azonos értéket. Ez az apró CSS-trükk vertikálisan középre rendezi az elemen belül a szöveget. Emellett pedig a border-bottom tulajdonságot vizuális elválasztóként használjuk.*/
+nav li {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.4rem;
+  line-height: 3rem;
+  height: 3rem;
+  border-bottom: 1px solid #ccc;
+}
+
+/*A legfontosabb szabály a display: block;. Ennek köszönhetõen az anchor elemek kitöltik az li tageket. Ez megnöveli a kattintható terület méretét a teljes szélességre és magasságra, így könnyebb ráklikkelni a navigációs linkekre.*/
+nav a {
+  text-decoration: none;
+  color: #C74F78;
+  display: block;
+}
+
+/*Transition : Az animáció a background-color változásánál kerül alkalmazásra. Az animáció hossza 0,3 másodperc. Az animáció lassabb az elején és a végén.*/
+nav a:hover {
+  background-color: #fff;
+  transition: background-color .3s ease-in-out;
+}
+
+nav a.active {
+  background-color: #c74f78;
+  color: #eee;
+}
+
+/* Media query- asztali gépre szánt*/
+@media (min-width: 600px) {
+  nav li {
+    display: inline-block;
+    border-bottom: none;
+    width: 7.5rem;
+  }
+
+}
+
+nav {
+  font-size: 0;
+}
+
+
+
+
+
+
+
+
+

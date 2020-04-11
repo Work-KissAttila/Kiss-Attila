@@ -1,0 +1,1 @@
+/*Ha border-box-ra állítjuk a box-sizing-ot, akkor a width és height tulajdonságok értéke magában foglalja a paddinget és a bordert. Vagyis a jelen példában a doboz valós mérete 150px lesz és nem 300px (150px+25px margin,border, 15px padding)*/

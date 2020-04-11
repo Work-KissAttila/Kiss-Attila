@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2020 by Work-KissAttila (http://jsbin.com/nujemud/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="átmenet tulajdonság- flat gombok">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+.button-nav{
+  display: inline-block;
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+  color: #000;
+  padding: .8rem 1rem;
+  border: 1px solid #000;
+}
+
+.button-nav:hover {
+  color: #fff;
+  background-color: #000;
+  transition: background-color .15s ease-in-out;
+}
+
+/*a transition azonban valami új. Ha rámutatsz az egérrel a gombokra, észreveheted, hogy a két állapot közti átmenet milyen sima. Kitörölheted a szabályt ideiglenesen, hogy megnézd az alap átmenetet. Sokkal darabosabb, nem? Vagy változtasd meg a .15s értéket valami szembetűnőbbre, mint például a 3s.
+
+Ez a "transition" (átmenet) tulajdonság, működés közben. Ha egy elemnek létezik két állapota (mint a gombunknak), ez a tulajdonság tudja animálni a két állapot közötti átmenetet. A transition valójában egy rövidítés (shorthand), és több értéket fogad. Most három értéket adtunk neki:
+
+transition-property: a tulajdonság, amelynek a változását animálni szeretnénk (ebben az esetben a background-color),
+transition-duration: az animáció hossza (ebben az esetben .15s),
+transition-timing-function: a hatás sebességgörbéje (ebben az esetben az ease-in-out egy olyan animációt hoz létre, amelynek az eleje és a vége szándékosan lassabb).*/
+</style>
+</head>
+<body>
+  <a href="#" class="button-nav">Previous</a>
+  <a href="#" class="button-nav">Next</a>
+</body>
+</html>

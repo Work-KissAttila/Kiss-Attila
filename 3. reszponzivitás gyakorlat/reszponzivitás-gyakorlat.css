@@ -1,0 +1,127 @@
+/*Eredeti feladat : aside,
+section {
+	margin-right: 15px;
+}
+
+.container {
+	width: 1368px;
+	height: 400px;
+	padding: 15px;
+}
+
+aside {
+	width: 456px;
+	height: 400px;
+	float: left;
+}
+
+section {
+	width: 456px;
+	height: 400px;
+	float: left;
+}
+
+az aside és a section a container div gyermek eleme, ahhoz hogy reszponzívvá tegyük az aside és a secitiont a contanierhez viszonítva kell a méretet megadni. a százalék kitûnõ abban az esetben, ha a méretet egy másik elem méretéhez viszonyítva szeretnéd megadni. Így pl. az aside szélessége 456px/1368px=0,3333 ez pedig 33%.
+
+A container :
+mi lehet a konténer kontextusa? A szélesség és magasság tekintetében ez most a szülõ elem, a body, amely kitölti a teljes viewportot. De mi a viewport statikus mérete?
+ezt a kis bemutató oldalt egy 1440px széles és 798px magas képernyõre terveztem. Ezeket a méreteket fogom használni a viewport statikus méreteinek.
+Ennek tudatában már nagyon egyszerû átváltani a számokat: 1368/1440 = 0.95 a szélességre és 400/798 = 0.5013 a magasságra. Mivel a .container elemet a viewporthoz viszonyítva szeretnénk méretezni, használjuk a vw és vh egységeket, hogy megkapjuk a reszponzív méreteket.
+
+Margók:
+Mind az aside, mind a section jobb oldali margója 15px. A kontextus, amelyhez képest méretezni szeretnénk ezeket, a konténer. Így a formula a következõképpen alakul: 15/1368 = 0.01096
+
+De mi a helyzet a térközzel a .container elemen? Ebben az esetben a cél (target) maga a térköz. (a terület a tartalom és a border [keret] között). Mivel ez még az elemen belül található, ezért a kontextus maga az elem. A formulát alkalmazva:
+
+*/
+
+
+           /*--- Alap stílusok----*/
+aside,
+section {
+	margin-right: 1.096%;
+}
+
+.container {
+	width: 95vw;
+	height: 50.13vh;
+	padding: 1,096%;
+}
+
+aside {
+	width: 33%;
+	height: 100%;
+	float: left;
+}
+
+section {
+	width: 33%;
+	height: 100%;
+	float: left;
+}
+
+
+/* Segítõ színek és egyéb beállítások */
+
+.container,
+aside,
+section {
+	border-radius: 10px;
+}
+
+aside,
+section {
+	border: 1px solid white;
+}
+
+span {
+	font-family: monospace;
+	font-size: 16px;
+	color: white;
+	border: 1px solid white;
+	border-top-left-radius: 10px;
+	padding: 0 3px 2px;
+}
+
+.container {
+	background: #e0e0e0;
+}
+
+aside {
+	background: #5197d5;
+}
+
+section {
+	background: #fdd72a;
+}
+
+
+               /*Media query*/
+
+/*A media queryk teszik lehetõvé, hogy lényegesen különbözõ elrendezéseket jeleníts meg a különbözõ képernyõméreteken anélkül, hogy egy teljesen különálló kódbázist kelljen létrehoznod.Ha a CSS-kódodba illesztesz egy @media szabályt, a böngészõ a megjelenítéskor ellenõrizni fogja, hogy a hozzá tartozó állítás teljesül-e. Ha igen, a böngészõ érvényesíteni fogja a blokkon belül megadott szabályokat A CSS kaszkádoló (rangsoroló - cascading) természete miatt, ha ezeket a @media szabályokat az alapstílusaid után helyezed el a kódban, azokat felülírva új elrendezéseket hozhatsz létre.*/
+
+/*Az alap stílusok (Base styles) minden egyes képernyõméretre vonatkoznak. Amikor egy képernyõ azonban 420 pixeles, vagy annál keskenyebb, a @media blokkban megadott szabályok is érvényesülni fognak. Ezek felülírják a korábban beállított értékeket (a float értéke none lesz és a width értéke auto), így létrejön az egyoszlopos elrendezés.*/
+
+@media (max-width: 420px) {
+
+	/* Demonstrational Styles */
+
+	aside,
+	section {
+		height: 48%;
+		margin-bottom: 1.096%;
+	}
+
+	/* Layout Styles */
+
+	aside,
+	section {
+		float: none;
+		width: auto;
+	}
+
+}
+
+
+
+

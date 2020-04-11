@@ -1,0 +1,33 @@
+/*Ne aggódj, mind a négy doboz megvan, csak egymás alatt.
+
+A fixed kiszedte az elemeket a normál sorrendbõl, így az eredeti helyük megszûnt. Mindegyik átkerült a böngészõablak bal legfelsõ pozíciójába (top: 0; left: 0;).
+
+A fix pozicionálással a böngészõablakhoz képest tudod mozgatni az elemeket. Ez azt jelenti, hogy egy fixed elem mindig ugyanott fog megjelenni a böngészõablakban, akkor is, ha az oldalt elgörgeti a felhasználó.
+
+Egy tipikus felhasználása a position: fixednek (fix pozíciónak) a navigációs elemek pozicionálása egy oldalon. Ha például szeretnél egy olyan headert, footert vagy navbart, amely mindig egy helyben marad, használd a position: fixed kódot.
+
+*/
+
+.box {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+#box-01 {
+  background-color: hsla(60, 100%, 60%, .85);
+}
+
+#box-02 {
+  background-color: hsla(84, 84%, 56%, .85);
+}
+
+#box-03 {
+  background-color: hsla(332, 69%, 51%, .85);
+}
+
+#box-04 {
+  background-color: hsla(279, 60%, 44%, .85);
+}

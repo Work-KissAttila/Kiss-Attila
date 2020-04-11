@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2020 by Work-KissAttila (http://jsbin.com/sosuhok/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="2. esküvői weboldal">
+	<title>Zoe &amp; Alex</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="images/wedding-landing-favicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes%7CMuli:400,700%7CLibre+Baskerville:300,400,700" rel="stylesheet">
+<style id="jsbin-css">
+         /* --- alap stílusok ---*/
+
+* {
+  box-sizing: border-box;
+}
+
+
+/*        Megjegyzések- alapstílusok
+1. Figyeld meg, hogy itt is rem egységeket használtunk a tipográfia méreteihez. Így, ha a felhasználó megváltoztatja az alapértelmezett betűméretet, az oldalunk szépen fog skálázódni.
+
+2. A section elemeket középre igazítottuk és mindegyik kapott egy 95%-os szélességet. Ez megakadályozza, hogy a tartalom bárhol "hozzáérjen" a képernyő széléhez.
+
+3. A háttérkép merített papír benyomását kelti, ami jól illik egy esküvői weblap hangulatához. A szép, kurzív betűk ugyanezt a papír hatást erősítik.*/
+h1,h2,h3,
+ul,ol,
+p,
+img {
+    margin-bottom: 1.5rem;
+}
+
+body {
+  background: url('https://orange.codeberryschool.com/content/images/project-assets/wedding-landing-background.png') repeat center;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: #444349;
+}
+
+.locations,
+.program,
+.gifts,
+.faq,
+.contact {
+  width: 95%;
+  margin: 1.5rem auto;
+  padding: .5rem 1rem;
+  text-align: center;
+}
+
+h1, 
+h2 {
+  font-family: 'Great Vibes', cursive;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: #bd806e;
+}
+
+a:hover {
+  color: #eda087;
+  transition: color .15s ease-in-out;
+}
+
+          /*--- fejléc ---*/
+
+
+/*          Megjegyzések- fejléc
+
+1. A background tulajdonságban van egy új rész: 70% center/cover. Ezt a rövidítést (shorthand) akkor használjuk, amikor egyszerre szeretnénk megadni a háttér méretét és pozícióját. Az első része (70% center) adja meg a kép pozícióját. Jelen esetben ez kissé balra mozgatja a fotót az X tengelyen, hogy a menyasszony feje ne lógjon ki a képernyőről. Ha szeretnéd látni a hatását, töröld ki átmenetileg, és nézd meg az oldalt.
+
+2. A display: table; megoldás ismerős kell hogy legyen a gyakori komponenseket bemutató projektünkből.
+
+3. Az aláhúzáshoz és dekoratív vonalakhoz pszeudoelemeket (pseudo-elements) használtunk, hogy a HTML-ben tényleg csak a tartalomhoz, struktúrához tartozó információ legyen.*/
+.cover {
+  background: url('https://orange.codeberryschool.com/content/images/project-assets/wedding-landing-cover.jpg') no-repeat 70% center/cover;
+  display: table;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+
+  .cover {
+    background: url('https://orange.codeberryschool.com/content/images/project-assets/wedding-landing-cover.jpg') no-repeat center/cover;
+  }
+
+}
+
+.hero-text-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.hero-text {
+  margin: 0 auto;
+  padding: .625rem;
+  color: hsla(0,0%,100%,.9);
+  background: hsla(100,0%,0%,.5);
+}
+
+.hero-text h1 {
+  font-size: 3.15rem;
+  color: #d2ba87;
+  margin-bottom: 0; 
+}
+
+@media (min-width: 768px) {
+
+  .hero-text {
+    padding: 1.25rem;
+    border-radius: 4px;
+    width: 50%;
+  }
+
+  .hero-text h1 {
+    font-size: 7rem;
+  }
+
+}
+
+.tagline {
+  font-size: 1.25rem;
+  letter-spacing: .15rem;
+}
+
+@media (min-width: 768px) {
+
+  .tagline {
+    text-transform: uppercase;
+  }
+
+}
+
+.tagline::after {
+  display: block;
+  content: "";
+  background-color: #fff;
+  height: 1px;
+  width: 12.515625rem;
+  margin: .5rem auto;
+}
+
+.date {
+  font-size: 1.25rem;
+  letter-spacing: .15rem;
+  vertical-align: middle;
+}
+
+.date::before,
+.date::after {
+  display: inline-block;
+  content: "";
+  background-color: #fff;
+  height: 1px;
+  width: 1.5rem;
+  vertical-align: middle;
+  margin: 0 .5rem;
+}
+
+          /*--- helyszínek ---*/
+
+/*       Megjegyzések- helyszínek
+1.Megint csak pszeudoelemet használtunk az elválasztók létrehozására.Mindig figyelj arra, hogy a struktúrát és a megjelenést válaszd el egymástól.*/
+
+.blurb img {
+  height: 7.5rem;
+}
+
+.blurb h3 {
+  font-weight: 700;
+}
+
+.blurb div {
+  font-family: 'Muli', sans-serif;
+}
+
+
+.blurb::after {
+  content: "";
+  display: block;
+  height: .1875rem;
+  width: 25vw;
+  margin: 1.5rem auto;
+  background-color: #444349;
+}
+
+@media (min-width: 768px) {
+
+  .blurb {
+    display: inline-block;
+    width: 30%;
+    padding: 1.5rem;
+    margin: .5rem;
+  }
+
+  .blurb::after {
+    display: none;
+  }
+
+}
+
+           /*--- programok ---*/
+
+/*Megjegyzések- program rész
+1. A 100vw érték felülírja a 95%-os szélességet az általános stílusokból.Így ér majd a section "faltól falig".
+
+2. Az átlátszó fekete háttér az alatta lévő háttérképpel együtt egy kellemes, szürke papír effektust hoz létre, ami szépen illeszkedik a készülő designunkba.*/
+.program {
+  width: 100%;
+  text-align: left;
+  background: hsla(100,0%,0%,.6);
+  color: #d2ba87;
+  font-family: 'Muli', sans-serif;
+}
+
+.program h2 {
+  font-family: 'Great Vibes', cursive;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.program p {
+  font-style: italic; 
+}
+
+.program ul {
+  letter-spacing: .025rem;
+}
+
+@media (min-width: 768px) {
+
+  .program-wrapper {
+    width: 30vw;
+    margin: 0 auto;
+  }
+
+}
+
+            /*--- ajándékok ---*/
+
+/*      Megjegyzések- nászajándék
+1. Miért kell csökkenteni az utolsó paragrafus margóját? Ha még emlékszel, a vertikális ritmus meghatározásakor mind a p, mind a section elemeknek adtunk 1.5rem-nyi alsó margót. Itt ezek egymásra rakódtak, így valamelyiknek mennie kell, hogy a ritmus konzisztens maradjon.
+*/
+
+.gifts img {
+  height: 7.5rem;
+}
+
+.gifts p:last-child {  
+  margin-bottom: 0;
+}
+
+
+         /*--- gyakori kérdések ---*/
+
+/*      Megjegyzések- gyakori kérdések
+1. Itt felül kell írnod a paragrafusok text-align tulajdonságát, mivel az alapértelmezett érték a center.
+
+2. Ismét pszeudoelem hozza létre az elválasztókat.
+
+3. Itt jönnek jól a .question és .answer classaink. Az első összehúzza az összetartozó kérdés-válasz párokat, míg a második elválasztja őket a többi párostól.*/
+
+.faq {
+  background: hsla(100,0%,0%,.6);;
+  color: #d2ba87;
+  width: 100%;
+  text-align: center;
+}
+
+.faq h2 {
+  margin-top: 1rem;
+}
+
+.faq p {
+  font-family: 'Muli', sans-serif;
+  text-align: left;
+}
+
+.question-group::after {
+  content: "";
+  display: block;
+  height: .1875rem;
+  width: 50vw;
+  margin: 1.5rem auto;
+  background-color: #d2ba87;
+}
+
+@media (min-width: 768px) {
+
+  .question-group {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    padding: 1.5rem;
+    margin: .5rem;
+  }
+
+  .question-group::after {
+    display: none;
+  }
+
+  .question-group h3 {
+    text-align: left;
+  }
+
+}
+
+.question {
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+.answer {
+  margin-bottom: 1.5rem;
+}
+
+             /*--- footer ---*/
+
+footer {
+  height: 10vh;
+  width: 100%;
+  background-color: #606060;
+  color: #fff;
+  font-family: 'Muli', sans-serif;
+  display: table;
+  text-align: center;
+  font-size: .875rem;
+}
+
+.footer-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+  padding: .5rem 1rem;
+}
+
+footer p {
+  margin-bottom: 0;
+}
+
+footer small {
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+
+  footer {
+    min-height: 7vh;
+  }
+
+}
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+  <header class="cover">
+      <div class="hero-text-wrapper">
+        <div class="hero-text">
+          <div class="tagline">We're getting married!</div>
+          <h1>Zoe &amp; Alex</h1>
+          <span class="date">August 1, 2018</span>
+        </div>
+      </div>
+  </header>
+  <main>
+    <section class="locations">
+      <h2>Locations</h2>
+      <div class="blurb">
+        <h3>Ceremony</h3>
+        <img src="https://orange.codeberryschool.com/content/images/project-assets/wedding-landing-ceremony.png" alt="Ceremony">
+        <div>St. Nicholas Church</div>
+        <div>2 Trinity Square, Budapest</div>
+      </div>
+      <div class="blurb">
+        <h3>Photos</h3>
+        <img src="https://orange.codeberryschool.com/content/images/project-assets/wedding-landing-photoshoot.png" alt="Photoshoot">
+        <div>Liberty Bastion</div>
+        <div>23 Wisdom Road, Budapest</div>
+      </div>
+      <div class="blurb">
+        <h3>Party</h3>
+        <img src="https://orange.codeberryschool.com/content/images/project-assets/wedding-landing-party.png" alt="Party">
+        <div>Heaven Lounge</div>
+        <div>14 Fairy Street, Budapest</div>
+      </div>
+    </section> 
+    <section class="program">
+      <h2>Program</h2>
+      <div class="program-wrapper">
+        <p>"It's going to be somehow, that's for sure."</p>
+        <ul>
+          <li>13:45 – Wedding ceremony</li>
+          <li>14:30 – Photos</li>
+          <li>16:00 – Cocktails</li>
+          <li>18:00 – Dinner</li>
+          <li>22:00 – Cake</li>
+          <li>... - 4:00 – Dance until dawn</li>
+        </ul>
+      </div>
+    </section>
+    <section class="gifts">
+      <h2>Gifts</h2>
+      <p>The greatest gift for us is to have you there.</p>
+      <img src="https://orange.codeberryschool.com/content/images/project-assets/wedding-landing-gifts.png" alt="Gifts">
+      <p>Please, just bring yourself and have fun with us.</p>
+    </section>
+    <section class="faq">
+      <h2>Questions &amp; Answers</h2>
+        <div class="question-group">
+          <h3>Travel and accomodations</h3>          
+            <p class="question">Will there be some kind of organized transfer?</p>
+            <p class="answer">No, we'll just meet at the church at 13:15.</p>          
+            <p class="question">Where can I park?</p>
+            <p class="answer">Parking is free on the weekends in the 1st district. The locations are close to each other so you won't need your car.</p>         
+            <p class="question">How can I get home at night?</p>
+            <p class="answer">The 916 bus is in service all night at the castle and it hits every major traffic hub in the city.</p>   
+        </div>
+        <div class="question-group">
+          <h3>Food and festivities</h3>
+            <p class="question">I'd like to do some kind of surprise for you guys at the party. To whom should I talk about this?</p>
+            <p class="answer">Discuss it with Abigail Smith. Just drop her an email at <a href="mailto:abigail@awesomemail.com">abigail@awesomemail.com</a>.</p>          
+            <p class="question">What should I wear? Do you have a dress code?</p>
+            <p class="answer">Wear what's comfortable to you. If it helps <a href="#" target="_blank">smart casual</a> / <a href="#" target="_blank">business casual</a> for the ladies and <a href="#" target="_blank">smart casual</a> / <a href="#" target="_blank">informal</a> for the gentlemen are perfect options.</p>          
+            <p class="question">I would like some kind of special food (gluten-free, lactose-free, vegan etc.)</p>
+            <p class="answer">Drop us a line <a href="mailto:zoeandalex@awesomemail.com">here</a> and we'll find a way.</p>        
+        </div>
+        <div class="question-group">
+          <h3>Other small stuff</h3>
+            <p class="question">I have a problem / question on the wedding day. With whom can I speak?</p>
+            <p class="answer">Jared Wright on this number: <a href="tel:+36300000000">+36 30 000 0000</a>.</p>          
+            <p class="question">Can we bring kids?</p>
+            <p class="answer">Sure! We planned a whole toy / sweets corner for them.</p>          
+            <p class="question">How do you feel about dogs? Can I bring mine?</p>
+            <p class="answer">We love dogs and you can absolutely bring yours. The Heaven Lounge is a dog-friendly place.</p>        
+        </div>
+    </section>
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>If you have any questions feel free to call / write us.</p>
+      <p>Phone: <a href="tel:+36300000000">+36 30 000 0000</a> (Zoe) / <a href="tel:+36300000000">+36 30 000 0000</a> (Alex)</p>
+      <p>Email: <a href="mailto:zoeandalex@awesomemail.com">zoeandalex@awesomemail.com</a></p>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-wrapper">
+      <p><small>Made with ♥ in Budapest &copy;2018 | Icons by <a href="http://www.flaticon.com/authors/becris" title="Becris">Becris</a> (<a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>)</small></p>
+    </div>
+  </footer>
+</body>
+</html>

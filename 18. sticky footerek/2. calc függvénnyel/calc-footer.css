@@ -1,0 +1,34 @@
+/*A B megoldási lehetõség a calc() függvény. Ez a módszer a következõkön alapul:
+
+a footer kivételével minden tartalmat csomagolj be egy konténerbe,
+a footernek adj egy fix magasságot, és
+számítsd ki a tartalom konténerének magasságát úgy, hogy a viewport teljes magasságából levonod a footer magasságát.*/
+
+* {
+  box-sizing: border-box;
+}
+
+.content {
+  min-height: calc(100vh - 50px);
+}
+
+.footer {
+  height: 50px;
+}
+
+.content {
+  background: red;
+  height: 50px;
+}
+
+.footer {
+  background: blue;
+}
+
+.content,
+.footer {
+  padding: 10px;
+  color: white;
+  font-family: "times new romen";
+  font-size: 1.125rem;
+}

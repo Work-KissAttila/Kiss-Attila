@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2020 by Work-KissAttila (http://jsbin.com/joduguk/3/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="Mondrain-festmény">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+/* height a magasság, width a szélesség, margin: 0,auto érték egy rövidítés az első érték az alsó és felső margó értékét mutatja a második auto érték a jobb és bal oldalit. Mivel auto van beírva, így azt mondjuk a böngészőnek hogy nem tudjuk mekkora a pontos érték, de legyen mindkét oldalon ugyanakkora, így kerül középre a tartalom. A box-shadow tulajdonsággal pedig árnyékot állíthatunk. Az első érték az árnyék vízszintes irányú pozíciója, a második a függőleges. Ez a két paraméter kötelező, a harmadik (elmosódottság, homályosság) és a negyedik (kiterjedés) nem. Az opcionális paramétereket sorrendben kell megadni (tehát spread nem adható meg anélkül, hogy a blur értéke ne lenne definiálva). */
+
+#canvas{
+  height: 300px;
+  width:  300px;
+  background-color: ivory;
+  margin: 0 auto;
+  box-shadow: 15px 15px 10px gray;
+}
+
+/* mivel a first-row div, a canvas div gyermek eleme, ezért ha 75%-os magasságot adunk neki, a canvas elem magasságának a 75%-át fedi le*/
+#first-row{
+  height:  75%;
+  width:  100%;
+}
+
+#big-rectangle{
+  height: 100%;
+  width:  75%;
+}
+/* a html kódban létrehoztunk egy "red" és egy "right" class-t. Több elemnek is beállíthatjuk ugyanazt a class-t, így ha itt módosítunk valamit, az az összes class osztállyal rendelkező elem tulajdonságát módosítja*/
+
+.red{
+  background-color:red;
+}
+
+.right{
+  float: right;
+}
+
+.black{
+  background-color:black;
+}
+
+.yellow{
+  background-color:yellow;
+}
+
+.blue{
+  background-color:blue;
+}
+
+/*az első elválasztó fekete vonal. Html kódban right és black osztály van neki megadva, ezért fekete színű és jobbra lebegtetett Magassága az első sor(first row) 100%-a, szélessége pedig 3%*/
+#first-divider{
+  height:100%;
+  width:3%;
+}
+
+/*az első oszlop(firts-column) elnevezésű div, az első sor gyermek eleme. Szélessége a még fennmaradó 22% (a piros négyszög 75% az első fekete elválasztó 3%,így maradt a 22%*/
+
+#first-column {
+  height: 100%;
+  width: 22%;
+}
+
+/*az első oszlop gyermek elemei. a két négyszög egyforma magasságú, közte egy fekete elválasztó. Szélességük az első oszlop 100%*/
+#first-medium-rectangle {
+  height: 48.5%;
+  width: 100%;
+}
+#second-medium-rectangle {
+  height: 48.5%;
+  width: 100%;
+}
+#second-divider {
+  height: 3%;
+  width: 100%;
+}
+/*második sor- egy vízszintes fekete vonal*/
+#second-row{
+  width:100%;
+  height: 3%; 
+}
+/*harmadik sor- Szélessége 100%, magassága az első és a második sor hagyta terület, vagyis 22%*/
+#third-row{
+  width:100%;
+  height:22%;
+}
+
+/*utolsó oszlop, ebbe van belecsomagolva több elem* Szélessége az utolsó sor 5%*/
+#last-column{
+  width:5%;
+  height:100%;
+}
+/* fekete elválasztó az utolsó oszlopban*/
+#third-divider{
+  width:  100%;
+  height:  10%;
+}
+/*2 egyforma méretű négyszög*/
+#second-tiny-rectangle{
+  width: 100%;
+  height: 45%;
+}
+#first-tiny-rectangle{
+  width: 100%;
+  height: 45%;
+}
+
+/*fekete elválasztó vonal, ami az utolsó oszlop mellett van*/
+#fourth-divider{
+  width:3%;
+  height:100%;
+}
+/*széles négyszög*/
+#wide-rectangle{
+  width:67%;
+  height:100%;
+
+}
+/*fekete elválasztó vonal*/
+#fifth-divider{
+  width:3%;
+  height:100%;
+}
+
+/*utolsó kék négyszög*/
+#small-rectangle{
+  width:22%;
+  height:100%;
+}
+
+
+
+</style>
+</head>
+<body>
+  <div id="canvas">
+    <div id="first-row">
+      <div id="big-rectangle" class="red right"><!--több class esetén szimpla szóközzel választjuk el a különböző classokat--></div>
+      <div id="first-divider" class="right black"></div>
+      <div id="first-column" class="right">
+        <div id="first-medium-rectangle"></div>
+        <div id="second-divider" class="black"></div>
+        <div id="second-medium-rectangle"></div>
+      </div>      
+    </div> 
+    
+    <div id="second-row" class="black"></div><!--második sor, a fekete elválasztó vonal-->
+    
+    <div id="third-row"><!--utolsó sor, benne a maradék felolszlással-->
+      <div id="last-column" class="right"><!--jobb szélén lévő oszlop ami tartalmaz egy elválasztót és két egyforma méretű négyszöget-->
+        <div id="first-tiny-rectangle"></div>
+        <div id="third-divider" class="black"></div>
+        <div id="second-tiny-rectangle" class="yellow"></div>
+      </div>
+      <div id="fourth-divider" class="right black"></div>
+      <div id="wide-rectangle" class="right"></div>
+      <div id="fifth-divider" class="right black"></div>
+      <div id="small-rectangle" class= "right blue"></div>
+      
+    </div>
+  </div>
+</body>
+</html>

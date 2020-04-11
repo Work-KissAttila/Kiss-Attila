@@ -1,0 +1,32 @@
+.package {
+  float: left;
+  width: 29.33%;
+  margin: 1%;
+  padding: 1%;
+  background-color: #eee;
+  text-align: center;
+}
+/*Emlékszel, hogy azt mondtuk, a float kiveszi az elemeket a normál megjelenítési sorrendbõl? Amikor a három .package div-et balra floatoltad, azok kikerültek a sorrendbõl, és a helyükön ott maradt egy üres .packages div.
+
+A böngészõ elég okos ahhoz, hogy a tartalmat a floatolt elemek után kezdje el, de a .content így is ott kezdõdik, ahol a .packages véget ért. A három csomag tetején.
+
+A clear tulajdonsággal vissza tudod állítani a normál sorrendet a floatok után. Három formája van: clear: left, clear: right és clear: both. Mindegyik a nevének megfelelõ irányba történt floatokra hat (a both értelemszerûen mindkettõre).*/
+
+.content {
+  padding: 10px;
+  background-color: #888;
+  clear: both;
+  margin-top: 75px;
+}
+
+
+.packages::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+/*A kód beilleszt egy üres pszeudoelemet (content: "";) a valóban létezõ div-ed után (::after). Ez a pszeudoelem block elemként jelenik meg (display: block;), és rendezi a floatokat a clear: both; segítségével.
+
+Pszeudoelemet bármely elem után létrehozhatsz, csak a szelektorhoz kell hozzáadnod az ::after részt. A pszeudoelemeket fõként kozmetikai céllal használjuk, ha szeretnénk valamit hozzáadni az adott elem megjelenéséhez. A dupla kettõspont a ::pszeudoelemek és :pszeudoclassok elkülönítését szolgálja.*/
+

@@ -1,0 +1,46 @@
+Megjegyzések- html	
+
+1. A dupla konténer divek (wrappers) a fejlécben akkor lesz hasznos, amikor egyszerre próbálod középre rendezni a tartalmat és rakni mögé egy sötétebb, átlátszó hátteret (overlay).
+2. A .blurb div-ekkel tudod majd létrehozni az asztali verzió három oszlopos elrendezését. Ugyanez a funkciója a .question-group classoknak.
+3. A wrapper (konténer) a Program szekcióban a középre igazításhoz kell majd az asztali verzióban.
+4. Figyeld meg, hogy végig szemantikus tageket használtunk és a classok elnevezése nem a megjelenésre, hanem a szerepükre utal.
+5 .Pár href attribútumban találkozhatsz a még ismeretlen tel: kiegészítéssel. Ez hasonlóan mûködik, mint a mailto:. Ha a felhasználó rákattint / megérinti, a böngészõ megpróbálja tárcsázni az adott számot. Mobilokon kifejezetten hasznos.
+
+
+Megjegyzések- alapstílusok
+1. Figyeld meg, hogy itt is rem egységeket használtunk a tipográfia méreteihez. Így, ha a felhasználó megváltoztatja az alapértelmezett betûméretet, az oldalunk szépen fog skálázódni.
+2. A section elemeket középre igazítottuk és mindegyik kapott egy 95%-os szélességet. Ez megakadályozza, hogy a tartalom bárhol "hozzáérjen" a képernyõ széléhez.
+3. A háttérkép merített papír benyomását kelti, ami jól illik egy esküvõi weblap hangulatához. A szép, kurzív betûk ugyanezt a papír hatást erõsítik.
+
+
+Megjegyzések- fejléc
+
+1. A background tulajdonságban van egy új rész: 70% center/cover. Ezt a rövidítést (shorthand) akkor használjuk, amikor egyszerre szeretnénk megadni a háttér méretét és pozícióját. Az elsõ része (70% center) adja meg a kép pozícióját. Jelen esetben ez kissé balra mozgatja a fotót az X tengelyen, hogy a menyasszony feje ne lógjon ki a képernyõrõl. Ha szeretnéd látni a hatását, töröld ki átmenetileg, és nézd meg az oldalt.
+2. A display: table; megoldás ismerõs kell hogy legyen a gyakori komponenseket bemutató projektünkbõl.
+3. Az aláhúzáshoz és dekoratív vonalakhoz pszeudoelemeket (pseudo-elements) használtunk, hogy a HTML-ben tényleg csak a tartalomhoz, struktúrához tartozó információ legyen.
+
+
+
+Megjegyzések- helyszínek
+1.Megint csak pszeudoelemet használtunk az elválasztók létrehozására. Mindig figyelj arra, hogy a struktúrát és a megjelenést válaszd el egymástól.
+
+Megjegyzések- program rész
+1. A 100vw érték felülírja a 95%-os szélességet az általános stílusokból. Így ér majd a section "faltól falig".
+2. Az átlátszó fekete háttér az alatta lévõ háttérképpel együtt egy kellemes, szürke papír effektust hoz létre, ami szépen illeszkedik a készülõ designunkba.
+
+
+Megjegyzések- nászajándék
+1. Miért kell csökkenteni az utolsó paragrafus margóját? Ha még emlékszel, a vertikális ritmus meghatározásakor mind a p, mind a section elemeknek adtunk 1.5rem-nyi alsó margót. Itt ezek egymásra rakódtak, így valamelyiknek mennie kell, hogy a ritmus konzisztens maradjon.
+
+
+
+Megjegyzések- gyakori kérdések
+1. Itt felül kell írnod a paragrafusok text-align tulajdonságát, mivel az alapértelmezett érték a center.
+2. Ismét pszeudoelem hozza létre az elválasztókat.
+3. Itt jönnek jól a .question és .answer classaink. Az elsõ összehúzza az összetartozó kérdés-válasz párokat, míg a második elválasztja õket a többi párostól.
+
+
+Megjegyzések-utolsó simítások
+Mi az inline-block módszert használtuk a több oszlopos elrendezéshez.
+Az elválasztókat egy egyszerû display: none; CSS szabállyal el tudod rejteni.
+A vertical-align: top; szabály szépen egymáshoz igazítja a "Gyakori kérdések" rész oszlopait.

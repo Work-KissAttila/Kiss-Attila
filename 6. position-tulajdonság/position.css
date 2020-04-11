@@ -1,0 +1,26 @@
+.box{
+  width:100px;
+  height:100px;
+}
+
+#box-01 {
+  background-color: hsla(60, 100%, 60%, .85);
+}
+
+
+/*Ahhoz, hogy egy elemet az eredeti helyéhez képest tudj pozicionálni a normál sorrenden belül, a position: relative deklarációra lesz szükség. Ez önmagában még nem változtatott meg semmit vizuálisan, de most már használhatod a top, right, bottom és left tulajdonságokat.
+bár az elem elmozdult az oldalon, az eredeti helye továbbra is fennmaradt.A relatív pozicionálás nem távolítja el az elemeket az alapértelmezett megjelenítési sorrendbõl.*/
+#box-02 {
+  background-color: hsla(84, 84%, 56%, .85);
+   position: relative;
+  top: 10px;
+  left: 20px;
+}
+
+#box-03 {
+  background-color: hsla(332, 69%, 51%, .85);
+}
+
+#box-04 {
+  background-color: hsla(279, 60%, 44%, .85);
+}

@@ -1,0 +1,18 @@
+figure {
+	height: 0;
+	padding-bottom: 56.25%; /* 16:9 aspect ratio */
+	position: relative;
+}
+
+figure iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+/*Az elsõ lényeges rész a padding-bottom tulajdonság. Ez teremti meg azt a teret, amelybe a beágyazott média nyúlhat. A figure konténer magassága így mindig a szélességének 56.25%-a lesz. Ez pontosan a 16:9-es méretaránynak felel meg, így a beágyazott tartalom teljes egésze látszani fog.
+A position: relative; biztosítja, hogy az iframe-et a figure elemhez képest tudjuk pozicionálni.
+A height: 0; részre csak az Internet Explorer 5 és 6 miatt van szükség.
+A kód fennmaradó része pedig egészen magáért beszél. Az iframe abszolút módon pozicionált, szélessége és magassága is 100%, így mindig kitölti a rendelkezésére álló konténert, ez biztosítja a reszponzivitást.*/

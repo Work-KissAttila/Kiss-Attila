@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2020 by Work-KissAttila (http://jsbin.com/zajarit/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="fixáció">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+/*Ne aggódj, mind a négy doboz megvan, csak egymás alatt.
+
+A fixed kiszedte az elemeket a normál sorrendből, így az eredeti helyük megszűnt. Mindegyik átkerült a böngészőablak bal legfelső pozíciójába (top: 0; left: 0;).
+
+A fix pozicionálással a böngészőablakhoz képest tudod mozgatni az elemeket. Ez azt jelenti, hogy egy fixed elem mindig ugyanott fog megjelenni a böngészőablakban, akkor is, ha az oldalt elgörgeti a felhasználó.
+
+Egy tipikus felhasználása a position: fixednek (fix pozíciónak) a navigációs elemek pozicionálása egy oldalon. Ha például szeretnél egy olyan headert, footert vagy navbart, amely mindig egy helyben marad, használd a position: fixed kódot.
+
+*/
+
+.box {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+#box-01 {
+  background-color: hsla(60, 100%, 60%, .85);
+}
+
+#box-02 {
+  background-color: hsla(84, 84%, 56%, .85);
+}
+
+#box-03 {
+  background-color: hsla(332, 69%, 51%, .85);
+}
+
+#box-04 {
+  background-color: hsla(279, 60%, 44%, .85);
+}
+</style>
+</head>
+<body>
+  <div id="box-01" class="box">#box-01</div>
+  <div id="box-02" class="box">#box-02</div>
+  <div id="box-03" class="box">#box-03</div>
+  <div id="box-04" class="box">#box-04</div>
+</body>
+</html>
